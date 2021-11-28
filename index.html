@@ -1,0 +1,57 @@
+<!--GUI HW4
+Natalie Mallon
+email: natalie_mallon@student.uml.edu 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="hw4styling.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="dist/jquery.validate.min.js"></script>
+  <script src="jquery-form-validation-code.js"></script>
+  <script type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<title>Multiplication Table Generator</title>
+</head>
+<body>
+<h1>Multiplication Table Generator</h1>
+
+<div id= "Everything">
+  <form id = "form" action="" name="Multiplication-Table-Form">
+    <div id='minimum-column'>
+      <label for="MinColumn">Minimum Column Value</label>
+      <!-- Changed the IDs/label for attributes to match the name (it's ok for them to match, they often do) so that they match the rules in the jQuery validator -->
+      <input type="number" id="MinColumn" name= "MinColumn" required>
+      <label id="invalidFloat1" class="error" for="MinColumn"></label>
+    </div>
+    <div id='maximum-column'>
+      <label for="MaxColumn">Maximum Column Value</label>
+      <input type="number" id="MaxColumn" name="MaxColumn"required>
+      <label id="invalidFloat2" class="error" for="MaxColumnValue"></label>
+      <label id="TooSmall1" class="error" for="MaxColumnValue"></label>
+    </div>
+    <div id='minimum-row'>
+        <label for="MinRow">Minimum Row Value</label>
+      <input type="number" id="MinRow" name="MinRow"required>
+      <label id="invalidFloat3" class="error" for="MinRow"></label>
+    </div>
+    <div id='maximum-row'>
+        <label for="MaxRow">Maximum Row Value</label>
+      <input type="number" id="MaxRow" name="MaxRow"required>
+      <label id="invalidFloat4" class="error" for="MaxRow"></label>
+      <label id="TooSmall2" class="error" for="MaxRow"></label>
+    </div>
+    <div class ="GenerationButton">
+      <!-- Here I changed the button type to submit, and removed the call to ReadInFourNumbers--moved it to the submit function in the jQuery file -->
+    <button id='button' name="button" class="btn btn-primary btn-sm" required>Generate New table</button>
+    </div>
+  </form>
+  <span id="DisplayError"></span>
+     <div id= "Multiplication-Table">
+        <table id='MultiplicationTable'></table>
+</body>
+</html>
+
+<!-- The onSubmit event is what calls the jQuery validator. -->
